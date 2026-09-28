@@ -1,0 +1,77 @@
+<rml>
+  <head>
+    <title>Flappy Bird</title>
+    <style>
+      @font-face { font-family: Interface; src: url(LatoLatin-Regular.ttf); font-weight: 400; }
+      @font-face { font-family: Interface; src: url(LatoLatin-Bold.ttf); font-weight: 700; }
+      body { margin: 0; font-family: Interface; color: #ffffff; }
+      .hidden { display: none; }
+      #start-screen, #death-screen {
+        position: absolute;
+        left: 17dp;
+        top: 108dp;
+        width: 216dp;
+        padding: 16dp;
+        border-radius: 12dp;
+        background-color: #14263ee9;
+        border: 2dp #ffdc73;
+        text-align: center;
+      }
+      h1 { display: block; margin: 0 0 7dp 0; font-size: 29dp; font-weight: 700; color: #ffe082; }
+      h2 { display: block; margin: 0 0 8dp 0; font-size: 25dp; font-weight: 700; color: #ffe082; }
+      p { display: block; margin: 0 0 10dp 0; font-size: 13dp; color: #f0f5ff; }
+      .hint { font-size: 11dp; color: #c6d4ed; }
+      button {
+        display: block;
+        width: 146dp;
+        height: 36dp;
+        margin: 8dp auto 9dp auto;
+        border-radius: 8dp;
+        border: 1dp #fff2b5;
+        background-color: #ef9f35;
+        color: #172136;
+        font-family: Interface;
+        font-size: 17dp;
+        font-weight: 700;
+      }
+      button:hover { background-color: #ffd273; }
+      button:active { background-color: #d78027; }
+      #score-hud {
+        position: absolute;
+        top: 24dp;
+        left: 0dp;
+        width: 288dp;
+        text-align: center;
+      }
+      #score { font-size: 42dp; font-weight: 700; color: #ffffff; }
+      .stat { display: block; margin: 7dp 0; font-size: 18dp; }
+      .stat strong { color: #ffe082; }
+      #footer {
+        position: absolute;
+        top: 480dp;
+        left: 0dp;
+        width: 288dp;
+        text-align: center;
+        font-size: 10dp;
+        color: #eef7ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="start-screen">
+      <h1>FLAPPY BIRD</h1>
+      <p>Fly between the pipes and beat your best score.</p>
+      <button id="start-button">PLAY</button>
+      <p class="hint">Space / Up / Click to flap</p>
+    </div>
+    <div id="score-hud" class="hidden"><span id="score">0</span></div>
+    <div id="death-screen" class="hidden">
+      <h2>GAME OVER</h2>
+      <p class="stat">Score: <strong id="final-score">0</strong></p>
+      <p class="stat">Best: <strong id="best-score">0</strong></p>
+      <button id="restart-button">TRY AGAIN</button>
+      <p class="hint">Press Space or Enter to restart</p>
+    </div>
+    <div id="footer">FLAPPY BIRD • INNO 2D + CANVAS</div>
+  </body>
+</rml>

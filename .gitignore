@@ -1,0 +1,26 @@
+# Operating system and IDE state
+.DS_Store
+**/.DS_Store
+**/.idea/
+**/.vs/
+**/.vscode/
+
+# Inno Editor generated project projections and workspace layout
+**/Inno.EditorScripts.csproj
+**/Inno.GameScripts.csproj
+**/InnoProject.sln
+**/editor.ini
+
+# Rebuildable engine, compiler, and player output
+**/Library/
+**/Builds/
+**/Logs/
+**/Temp/
+**/bin/
+**/obj/
+
+# Local editor and tool output
+*.user
+*.suo
+*.tmp
+*.log
