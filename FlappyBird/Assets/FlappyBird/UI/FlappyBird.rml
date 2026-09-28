@@ -4,11 +4,11 @@
     <style>
       @font-face { font-family: Interface; src: url(LatoLatin-Regular.ttf); font-weight: 400; }
       @font-face { font-family: Interface; src: url(LatoLatin-Bold.ttf); font-weight: 700; }
-      body { margin: 0; font-family: Interface; color: #ffffff; }
+      body { width: 910dp; height: 512dp; margin: 0; font-family: Interface; color: #ffffff; }
       .hidden { display: none; }
       #start-screen, #death-screen {
         position: absolute;
-        left: 17dp;
+        left: 329dp;
         top: 108dp;
         width: 216dp;
         padding: 16dp;
@@ -22,10 +22,13 @@
       p { display: block; margin: 0 0 10dp 0; font-size: 13dp; color: #f0f5ff; }
       .hint { font-size: 11dp; color: #c6d4ed; }
       button {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 146dp;
         height: 36dp;
         margin: 8dp auto 9dp auto;
+        padding: 0;
         border-radius: 8dp;
         border: 1dp #fff2b5;
         background-color: #ef9f35;
@@ -33,14 +36,45 @@
         font-family: Interface;
         font-size: 17dp;
         font-weight: 700;
+        text-align: center;
+      }
+      button .label {
+        display: block;
+        position: relative;
+        top: 1dp;
+        width: 100%;
+        line-height: 17dp;
+        text-align: center;
       }
       button:hover { background-color: #ffd273; }
       button:active { background-color: #d78027; }
+      #mode-button {
+        position: absolute;
+        top: 14dp;
+        right: 14dp;
+        width: 40dp;
+        height: 40dp;
+        margin: 0;
+        padding: 0;
+        border-radius: 20dp;
+        background-color: #14263ee9;
+      }
+      #mode-button .symbol { display: block; position: relative; width: 24dp; height: 24dp; }
+      #mode-button .symbol.hidden { display: none; }
+      #moon-icon { left: 3dp; overflow: hidden; border-radius: 12dp; background-color: #e9f2ff; }
+      #moon-cutout { position: absolute; left: 9dp; top: 0dp; width: 20dp; height: 20dp; border-radius: 10dp; background-color: #14263e; }
+      #sun-core { position: absolute; left: 7dp; top: 7dp; width: 10dp; height: 10dp; border-radius: 5dp; background-color: #ffe082; }
+      #sun-top, #sun-bottom { position: absolute; left: 11dp; width: 2dp; height: 5dp; background-color: #ffe082; }
+      #sun-top { top: 0dp; }
+      #sun-bottom { top: 19dp; }
+      #sun-left, #sun-right { position: absolute; top: 11dp; width: 5dp; height: 2dp; background-color: #ffe082; }
+      #sun-left { left: 0dp; }
+      #sun-right { left: 19dp; }
       #score-hud {
         position: absolute;
         top: 24dp;
         left: 0dp;
-        width: 288dp;
+        width: 910dp;
         text-align: center;
       }
       #score { font-size: 42dp; font-weight: 700; color: #ffffff; }
@@ -50,7 +84,7 @@
         position: absolute;
         top: 480dp;
         left: 0dp;
-        width: 288dp;
+        width: 910dp;
         text-align: center;
         font-size: 10dp;
         color: #eef7ff;
@@ -61,7 +95,7 @@
     <div id="start-screen">
       <h1>FLAPPY BIRD</h1>
       <p>Fly between the pipes and beat your best score.</p>
-      <button id="start-button">PLAY</button>
+      <button id="start-button"><span id="start-label" class="label">PLAY</span></button>
       <p class="hint">Space / Up / Click to flap</p>
     </div>
     <div id="score-hud" class="hidden"><span id="score">0</span></div>
@@ -69,9 +103,16 @@
       <h2>GAME OVER</h2>
       <p class="stat">Score: <strong id="final-score">0</strong></p>
       <p class="stat">Best: <strong id="best-score">0</strong></p>
-      <button id="restart-button">TRY AGAIN</button>
+      <button id="restart-button"><span id="restart-label" class="label">TRY AGAIN</span></button>
       <p class="hint">Press Space or Enter to restart</p>
     </div>
+    <button id="mode-button" title="Toggle day and night">
+      <span id="moon-icon" class="symbol"><span id="moon-cutout"></span></span>
+      <span id="sun-icon" class="symbol hidden">
+        <span id="sun-core"></span><span id="sun-top"></span><span id="sun-bottom"></span>
+        <span id="sun-left"></span><span id="sun-right"></span>
+      </span>
+    </button>
     <div id="footer">FLAPPY BIRD • INNO 2D + CANVAS</div>
   </body>
 </rml>

@@ -29,18 +29,35 @@ public sealed class FlappyBirdBird : GameBehavior
     /// <summary>Gets the bird's vertical world position.</summary>
     public float y => gameObject.transform.worldPosition.y;
 
-    /// <summary>Places the bird and rotates it to show its current flight direction.</summary>
+    /// <summary>Places the bird and its light while showing the current flight direction.</summary>
+    /// <param name="horizontalPosition">The horizontal world coordinate.</param>
     /// <param name="height">The vertical world coordinate.</param>
     /// <param name="velocity">The current vertical velocity used to tilt the bird.</param>
-    public void SetFlight(float height, float velocity)
+    public void SetFlight(float horizontalPosition, float height, float velocity)
     {
-        gameObject.transform.localPosition = new Vector3(-1.15f, height, 0.2f);
+        gameObject.transform.localPosition = new Vector3(horizontalPosition, height, 0.2f);
         (glow ?? throw new InvalidOperationException("The bird glow scene reference is missing."))
-            .transform.localPosition = new Vector3(-1.15f, height, 0.5f);
+            .transform.localPosition = new Vector3(horizontalPosition, height, 0.5f);
         float tilt = Math.Clamp(velocity * 5f, -75f, 25f);
         gameObject.transform.localRotation = Quaternion.FromEulerAnglesXYZDegrees(
             new Vector3(0f, 0f, tilt));
     }
+
+    /// <summary>Adjusts the authored bird light for the active time of day.</summary>
+    /// <param name="night">Whether the night lighting is active.</param>
+    public void SetNightMode(bool night)
+    {
+        Light2D light = (glow ?? throw new InvalidOperationException("The bird glow scene reference is missing."))
+            .GetComponent<Light2D>();
+        light.intensity = night ? 3.5f : 1.8f;
+        light.range = night ? 2.7f : 2.3f;
+    }
+
+    /// <summary>Shows the bird light while the bird is inside the camera view.</summary>
+    /// <param name="visible">Whether the bird light should illuminate the scene.</param>
+    public void SetGlowVisible(bool visible)
+        => (glow ?? throw new InvalidOperationException("The bird glow scene reference is missing."))
+            .SetActive(visible);
 
     /// <inheritdoc />
     protected override void Start()

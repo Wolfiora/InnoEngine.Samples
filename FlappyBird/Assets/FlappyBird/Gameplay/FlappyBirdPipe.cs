@@ -1,4 +1,5 @@
 using System;
+using Inno.Rendering2D;
 using InnoEngine.Mathematics;
 using InnoEngine.Reflection;
 using InnoEngine.Scene;
@@ -34,6 +35,8 @@ public sealed class FlappyBirdPipe : GameBehavior
     {
         GameObject top = upper ?? throw new InvalidOperationException("The pipe prefab has no upper child reference.");
         GameObject bottom = lower ?? throw new InvalidOperationException("The pipe prefab has no lower child reference.");
+        top.GetComponent<SpriteRenderer2D>().lightBlendStyles = 0x01;
+        bottom.GetComponent<SpriteRenderer2D>().lightBlendStyles = 0x01;
         gameObject.transform.localPosition = new Vector3(horizontalPosition, 0f, 0f);
         top.transform.localPosition = new Vector3(0f, gapHeight + C_HALF_GAP + C_HALF_PIPE_HEIGHT, 0f);
         bottom.transform.localPosition = new Vector3(0f, gapHeight - C_HALF_GAP - C_HALF_PIPE_HEIGHT, 0f);
@@ -67,4 +70,21 @@ public sealed class FlappyBirdPipe : GameBehavior
         => MathF.Abs(x - birdX) < 0.74f
            && (birdY + 0.19f > m_gapY + C_HALF_GAP
                || birdY - 0.19f < m_gapY - C_HALF_GAP);
+
+    /// <summary>Checks whether both rendered pipes have passed the camera's left edge.</summary>
+    /// <param name="cameraLeft">The leftmost visible world coordinate.</param>
+    /// <returns>True once no part of either pipe remains in the camera view.</returns>
+    public bool IsFullyLeftOf(float cameraLeft)
+    {
+        GameObject top = upper ?? throw new InvalidOperationException("The pipe prefab has no upper child reference.");
+        GameObject bottom = lower ?? throw new InvalidOperationException("The pipe prefab has no lower child reference.");
+        return RightEdge(top) < cameraLeft && RightEdge(bottom) < cameraLeft;
+    }
+
+    private static float RightEdge(GameObject pipe)
+    {
+        SpriteRenderer2D sprite = pipe.GetComponent<SpriteRenderer2D>();
+        return pipe.transform.worldPosition.x
+            + MathF.Abs(pipe.transform.worldScale.x) * sprite.size.x * 0.5f;
+    }
 }
