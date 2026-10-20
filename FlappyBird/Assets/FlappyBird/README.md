@@ -6,10 +6,18 @@
 
 在 Rider 中打开项目根目录的 `InnoProject.sln`。它只包含 `Inno.GameScripts.csproj` 和 `Inno.EditorScripts.csproj`；两者都是 Editor 自动生成的索引工程，源码全部来自 `Assets`。这三个生成文件与 `Library`、`Builds` 都不需要提交到 Git。
 
+## 2D 创作练习
+
+[`~Authoring/BirdFlight.ispriteanimation2d`](~Authoring/BirdFlight.ispriteanimation2d) 是可编辑的帧动画练习。选择它后使用 Inspector 或 **Panel → Authoring → Sprite Animation**，体验命名片段、帧时长、预览、Save 和 Undo/Redo；完整操作见安装的 Rendering2D 创作指南。
+
+`~Authoring/PracticeTiles.itileset2d` 和 `~Authoring/PracticeMap.itilemap2d` 提供命名调色板与稀疏画布练习，可尝试 Brush、Undo/Redo 和 Save。
+
+`~Authoring` 是项目中的普通创作目录，练习不会替换现有 FlappyBird 玩法。按引擎内容规则，该目录不进入 Player runtime closure。
+
 ## Structure
 
 - `FlappyBird.iscene` stores the camera, Canvas, backgrounds, ground, bird, one positioned pipe prefab preview, and lights. Named empty objects group the hierarchy. The Canvas references `UI/FlappyBird.rml` directly. The ready screen displays several live prefab pipes and animates the bird beside the start panel; starting a run takes over those pipes without replacing them.
-- `Prefabs/Pipe Pair.iprefab` contains the upper and lower sprite objects and their `FlappyBirdPipe` behavior. New obstacles are instantiated from this prefab and destroyed after leaving the screen, keeping the live scene bounded.
+- `Prefabs/PipePair.iprefab` contains the upper and lower sprite objects and their `FlappyBirdPipe` behavior. New obstacles are instantiated from this prefab and destroyed after leaving the screen, keeping the live scene bounded.
 - `Gameplay/FlappyBirdController.cs` is a `GameBehavior` on the Canvas object. It owns game state, flight and collision rules, scoring, audio cues, prefab spawning, and Canvas button events. Scene and audio references are serialized in the Inspector.
 - `Gameplay/FlappyBirdBird.cs` animates three serialized sprite references and moves the bird light. `Gameplay/FlappyBirdPipe.cs` controls one prefab instance.
 - `UI/FlappyBird.rml` contains the start, score, and death screens.
