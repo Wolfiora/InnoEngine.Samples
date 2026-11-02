@@ -1,0 +1,10 @@
+Library/
+artifacts/
+Logs/
+editor.ini
+Builds/
+*.csproj.user
+InnoProject.sln
+Inno.*Scripts.csproj
+Inno.VisualNovel.*.csproj
+Settings.Editor.inno

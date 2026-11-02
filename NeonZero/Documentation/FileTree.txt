@@ -1,0 +1,913 @@
+Story — 实际完整交付文件树（不含 Library、artifacts、Logs、Builds、bin、obj、生成的脚本工程和编辑器用户配置）
+Story/
+├── Assets/
+│   ├── Art/
+│   │   ├── Backgrounds/
+│   │   │   ├── ClockTower.png
+│   │   │   ├── ClockTower.png.imeta
+│   │   │   ├── LampAlley.png
+│   │   │   ├── LampAlley.png.imeta
+│   │   │   ├── LampWorkshop.png
+│   │   │   ├── LampWorkshop.png.imeta
+│   │   │   ├── MetroPlatform.png
+│   │   │   ├── MetroPlatform.png.imeta
+│   │   │   ├── RooftopDawn.png
+│   │   │   ├── RooftopDawn.png.imeta
+│   │   │   ├── StreetDawn.png
+│   │   │   ├── StreetDawn.png.imeta
+│   │   │   ├── StreetRain.png
+│   │   │   ├── StreetRain.png.imeta
+│   │   │   ├── ZeroCore.png
+│   │   │   └── ZeroCore.png.imeta
+│   │   ├── CG/
+│   │   │   ├── CityLights.png
+│   │   │   ├── CityLights.png.imeta
+│   │   │   ├── MorningReunion.png
+│   │   │   ├── MorningReunion.png.imeta
+│   │   │   ├── RainLamp.png
+│   │   │   ├── RainLamp.png.imeta
+│   │   │   ├── ResonantDawn.png
+│   │   │   └── ResonantDawn.png.imeta
+│   │   ├── Characters/
+│   │   │   ├── lin/
+│   │   │   │   ├── Atlas.png
+│   │   │   │   ├── Atlas.png.imeta
+│   │   │   │   ├── Portrait.png
+│   │   │   │   └── Portrait.png.imeta
+│   │   │   ├── shen/
+│   │   │   │   ├── Atlas.png
+│   │   │   │   ├── Atlas.png.imeta
+│   │   │   │   ├── Portrait.png
+│   │   │   │   └── Portrait.png.imeta
+│   │   │   ├── xu/
+│   │   │   │   ├── Atlas.png
+│   │   │   │   ├── Atlas.png.imeta
+│   │   │   │   ├── Portrait.png
+│   │   │   │   └── Portrait.png.imeta
+│   │   │   ├── lin.imeta
+│   │   │   ├── shen.imeta
+│   │   │   └── xu.imeta
+│   │   ├── UI/
+│   │   │   ├── TitleKeyArt.png
+│   │   │   └── TitleKeyArt.png.imeta
+│   │   ├── Backgrounds.imeta
+│   │   ├── CG.imeta
+│   │   ├── Characters.imeta
+│   │   └── UI.imeta
+│   ├── Audio/
+│   │   ├── Ambience/
+│   │   │   ├── MetroHum.wav
+│   │   │   ├── MetroHum.wav.imeta
+│   │   │   ├── Rain.wav
+│   │   │   ├── Rain.wav.imeta
+│   │   │   ├── RooftopWind.wav
+│   │   │   └── RooftopWind.wav.imeta
+│   │   ├── Music/
+│   │   │   ├── Cipher.mp3
+│   │   │   ├── Cipher.mp3.imeta
+│   │   │   ├── ClashDefiant.mp3
+│   │   │   ├── ClashDefiant.mp3.imeta
+│   │   │   ├── HeartOfNowhere.mp3
+│   │   │   ├── HeartOfNowhere.mp3.imeta
+│   │   │   ├── VolatileReaction.mp3
+│   │   │   └── VolatileReaction.mp3.imeta
+│   │   ├── Sfx/
+│   │   │   ├── CircuitConnect.wav
+│   │   │   ├── CircuitConnect.wav.imeta
+│   │   │   ├── ClockBell.wav
+│   │   │   ├── ClockBell.wav.imeta
+│   │   │   ├── DawnChime.wav
+│   │   │   ├── DawnChime.wav.imeta
+│   │   │   ├── Footsteps.wav
+│   │   │   ├── Footsteps.wav.imeta
+│   │   │   ├── GlassCrack.wav
+│   │   │   ├── GlassCrack.wav.imeta
+│   │   │   ├── Impact.wav
+│   │   │   ├── Impact.wav.imeta
+│   │   │   ├── LampIgnite.wav
+│   │   │   ├── LampIgnite.wav.imeta
+│   │   │   ├── PowerOut.wav
+│   │   │   ├── PowerOut.wav.imeta
+│   │   │   ├── SealBreak.wav
+│   │   │   ├── SealBreak.wav.imeta
+│   │   │   ├── Shield.wav
+│   │   │   ├── Shield.wav.imeta
+│   │   │   ├── SpellCharge.wav
+│   │   │   ├── SpellCharge.wav.imeta
+│   │   │   ├── SpellSlash.wav
+│   │   │   └── SpellSlash.wav.imeta
+│   │   ├── Voice/
+│   │   │   ├── zh-CN/
+│   │   │   │   ├── nz.ch01/
+│   │   │   │   │   ├── nz.ch01-002.wav
+│   │   │   │   │   ├── nz.ch01-002.wav.imeta
+│   │   │   │   │   ├── nz.ch01-004.wav
+│   │   │   │   │   ├── nz.ch01-004.wav.imeta
+│   │   │   │   │   ├── nz.ch01-006.wav
+│   │   │   │   │   ├── nz.ch01-006.wav.imeta
+│   │   │   │   │   ├── nz.ch01-008.wav
+│   │   │   │   │   ├── nz.ch01-008.wav.imeta
+│   │   │   │   │   ├── nz.ch01-010.wav
+│   │   │   │   │   ├── nz.ch01-010.wav.imeta
+│   │   │   │   │   ├── nz.ch01-012.wav
+│   │   │   │   │   ├── nz.ch01-012.wav.imeta
+│   │   │   │   │   ├── nz.ch01-014.wav
+│   │   │   │   │   ├── nz.ch01-014.wav.imeta
+│   │   │   │   │   ├── nz.ch01-015.wav
+│   │   │   │   │   ├── nz.ch01-015.wav.imeta
+│   │   │   │   │   ├── nz.ch01-016.wav
+│   │   │   │   │   ├── nz.ch01-016.wav.imeta
+│   │   │   │   │   ├── nz.ch01-017.wav
+│   │   │   │   │   ├── nz.ch01-017.wav.imeta
+│   │   │   │   │   ├── nz.ch01-018.wav
+│   │   │   │   │   ├── nz.ch01-018.wav.imeta
+│   │   │   │   │   ├── nz.ch01-019.wav
+│   │   │   │   │   ├── nz.ch01-019.wav.imeta
+│   │   │   │   │   ├── nz.ch01-021.wav
+│   │   │   │   │   ├── nz.ch01-021.wav.imeta
+│   │   │   │   │   ├── nz.ch01-022.wav
+│   │   │   │   │   ├── nz.ch01-022.wav.imeta
+│   │   │   │   │   ├── nz.ch01-023.wav
+│   │   │   │   │   ├── nz.ch01-023.wav.imeta
+│   │   │   │   │   ├── nz.ch01-024.wav
+│   │   │   │   │   ├── nz.ch01-024.wav.imeta
+│   │   │   │   │   ├── nz.ch01-025.wav
+│   │   │   │   │   ├── nz.ch01-025.wav.imeta
+│   │   │   │   │   ├── nz.ch01-026.wav
+│   │   │   │   │   ├── nz.ch01-026.wav.imeta
+│   │   │   │   │   ├── nz.ch01-028.wav
+│   │   │   │   │   ├── nz.ch01-028.wav.imeta
+│   │   │   │   │   ├── nz.ch01-029.wav
+│   │   │   │   │   ├── nz.ch01-029.wav.imeta
+│   │   │   │   │   ├── nz.ch01-030.wav
+│   │   │   │   │   ├── nz.ch01-030.wav.imeta
+│   │   │   │   │   ├── nz.ch01-031.wav
+│   │   │   │   │   ├── nz.ch01-031.wav.imeta
+│   │   │   │   │   ├── nz.ch01-033.wav
+│   │   │   │   │   ├── nz.ch01-033.wav.imeta
+│   │   │   │   │   ├── nz.ch01-035.wav
+│   │   │   │   │   ├── nz.ch01-035.wav.imeta
+│   │   │   │   │   ├── nz.ch01-036.wav
+│   │   │   │   │   ├── nz.ch01-036.wav.imeta
+│   │   │   │   │   ├── nz.ch01-037.wav
+│   │   │   │   │   ├── nz.ch01-037.wav.imeta
+│   │   │   │   │   ├── nz.ch01-038.wav
+│   │   │   │   │   ├── nz.ch01-038.wav.imeta
+│   │   │   │   │   ├── nz.ch01-039.wav
+│   │   │   │   │   ├── nz.ch01-039.wav.imeta
+│   │   │   │   │   ├── nz.ch01-040.wav
+│   │   │   │   │   ├── nz.ch01-040.wav.imeta
+│   │   │   │   │   ├── nz.ch01-041.wav
+│   │   │   │   │   ├── nz.ch01-041.wav.imeta
+│   │   │   │   │   ├── nz.ch01-042.wav
+│   │   │   │   │   ├── nz.ch01-042.wav.imeta
+│   │   │   │   │   ├── nz.ch01-043.wav
+│   │   │   │   │   ├── nz.ch01-043.wav.imeta
+│   │   │   │   │   ├── nz.ch01-045.wav
+│   │   │   │   │   ├── nz.ch01-045.wav.imeta
+│   │   │   │   │   ├── nz.ch01-047.wav
+│   │   │   │   │   ├── nz.ch01-047.wav.imeta
+│   │   │   │   │   ├── nz.ch01-048.wav
+│   │   │   │   │   ├── nz.ch01-048.wav.imeta
+│   │   │   │   │   ├── nz.ch01-049.wav
+│   │   │   │   │   └── nz.ch01-049.wav.imeta
+│   │   │   │   ├── nz.ch02/
+│   │   │   │   │   ├── nz.ch02-002.wav
+│   │   │   │   │   ├── nz.ch02-002.wav.imeta
+│   │   │   │   │   ├── nz.ch02-003.wav
+│   │   │   │   │   ├── nz.ch02-003.wav.imeta
+│   │   │   │   │   ├── nz.ch02-004.wav
+│   │   │   │   │   ├── nz.ch02-004.wav.imeta
+│   │   │   │   │   ├── nz.ch02-005.wav
+│   │   │   │   │   ├── nz.ch02-005.wav.imeta
+│   │   │   │   │   ├── nz.ch02-007.wav
+│   │   │   │   │   ├── nz.ch02-007.wav.imeta
+│   │   │   │   │   ├── nz.ch02-008.wav
+│   │   │   │   │   ├── nz.ch02-008.wav.imeta
+│   │   │   │   │   ├── nz.ch02-009.wav
+│   │   │   │   │   ├── nz.ch02-009.wav.imeta
+│   │   │   │   │   ├── nz.ch02-010.wav
+│   │   │   │   │   ├── nz.ch02-010.wav.imeta
+│   │   │   │   │   ├── nz.ch02-012.wav
+│   │   │   │   │   ├── nz.ch02-012.wav.imeta
+│   │   │   │   │   ├── nz.ch02-013.wav
+│   │   │   │   │   ├── nz.ch02-013.wav.imeta
+│   │   │   │   │   ├── nz.ch02-014.wav
+│   │   │   │   │   ├── nz.ch02-014.wav.imeta
+│   │   │   │   │   ├── nz.ch02-015.wav
+│   │   │   │   │   ├── nz.ch02-015.wav.imeta
+│   │   │   │   │   ├── nz.ch02-016.wav
+│   │   │   │   │   ├── nz.ch02-016.wav.imeta
+│   │   │   │   │   ├── nz.ch02-017.wav
+│   │   │   │   │   ├── nz.ch02-017.wav.imeta
+│   │   │   │   │   ├── nz.ch02-018.wav
+│   │   │   │   │   ├── nz.ch02-018.wav.imeta
+│   │   │   │   │   ├── nz.ch02-020.wav
+│   │   │   │   │   ├── nz.ch02-020.wav.imeta
+│   │   │   │   │   ├── nz.ch02-021.wav
+│   │   │   │   │   ├── nz.ch02-021.wav.imeta
+│   │   │   │   │   ├── nz.ch02-022.wav
+│   │   │   │   │   ├── nz.ch02-022.wav.imeta
+│   │   │   │   │   ├── nz.ch02-024.wav
+│   │   │   │   │   ├── nz.ch02-024.wav.imeta
+│   │   │   │   │   ├── nz.ch02-026.wav
+│   │   │   │   │   ├── nz.ch02-026.wav.imeta
+│   │   │   │   │   ├── nz.ch02-027.wav
+│   │   │   │   │   ├── nz.ch02-027.wav.imeta
+│   │   │   │   │   ├── nz.ch02-028.wav
+│   │   │   │   │   ├── nz.ch02-028.wav.imeta
+│   │   │   │   │   ├── nz.ch02-029.wav
+│   │   │   │   │   ├── nz.ch02-029.wav.imeta
+│   │   │   │   │   ├── nz.ch02-031.wav
+│   │   │   │   │   ├── nz.ch02-031.wav.imeta
+│   │   │   │   │   ├── nz.ch02-032.wav
+│   │   │   │   │   ├── nz.ch02-032.wav.imeta
+│   │   │   │   │   ├── nz.ch02-033.wav
+│   │   │   │   │   ├── nz.ch02-033.wav.imeta
+│   │   │   │   │   ├── nz.ch02-035.wav
+│   │   │   │   │   ├── nz.ch02-035.wav.imeta
+│   │   │   │   │   ├── nz.ch02-037.wav
+│   │   │   │   │   ├── nz.ch02-037.wav.imeta
+│   │   │   │   │   ├── nz.ch02-038.wav
+│   │   │   │   │   ├── nz.ch02-038.wav.imeta
+│   │   │   │   │   ├── nz.ch02-039.wav
+│   │   │   │   │   ├── nz.ch02-039.wav.imeta
+│   │   │   │   │   ├── nz.ch02-040.wav
+│   │   │   │   │   ├── nz.ch02-040.wav.imeta
+│   │   │   │   │   ├── nz.ch02-041.wav
+│   │   │   │   │   ├── nz.ch02-041.wav.imeta
+│   │   │   │   │   ├── nz.ch02-042.wav
+│   │   │   │   │   ├── nz.ch02-042.wav.imeta
+│   │   │   │   │   ├── nz.ch02-043.wav
+│   │   │   │   │   ├── nz.ch02-043.wav.imeta
+│   │   │   │   │   ├── nz.ch02-045.wav
+│   │   │   │   │   ├── nz.ch02-045.wav.imeta
+│   │   │   │   │   ├── nz.ch02-046.wav
+│   │   │   │   │   ├── nz.ch02-046.wav.imeta
+│   │   │   │   │   ├── nz.ch02-047.wav
+│   │   │   │   │   ├── nz.ch02-047.wav.imeta
+│   │   │   │   │   ├── nz.ch02-049.wav
+│   │   │   │   │   ├── nz.ch02-049.wav.imeta
+│   │   │   │   │   ├── nz.ch02-050.wav
+│   │   │   │   │   ├── nz.ch02-050.wav.imeta
+│   │   │   │   │   ├── nz.ch02-051.wav
+│   │   │   │   │   ├── nz.ch02-051.wav.imeta
+│   │   │   │   │   ├── nz.ch02-053.wav
+│   │   │   │   │   ├── nz.ch02-053.wav.imeta
+│   │   │   │   │   ├── nz.ch02-054.wav
+│   │   │   │   │   ├── nz.ch02-054.wav.imeta
+│   │   │   │   │   ├── nz.ch02-055.wav
+│   │   │   │   │   └── nz.ch02-055.wav.imeta
+│   │   │   │   ├── nz.ch03/
+│   │   │   │   │   ├── nz.ch03-002.wav
+│   │   │   │   │   ├── nz.ch03-002.wav.imeta
+│   │   │   │   │   ├── nz.ch03-003.wav
+│   │   │   │   │   ├── nz.ch03-003.wav.imeta
+│   │   │   │   │   ├── nz.ch03-004.wav
+│   │   │   │   │   ├── nz.ch03-004.wav.imeta
+│   │   │   │   │   ├── nz.ch03-005.wav
+│   │   │   │   │   ├── nz.ch03-005.wav.imeta
+│   │   │   │   │   ├── nz.ch03-006.wav
+│   │   │   │   │   ├── nz.ch03-006.wav.imeta
+│   │   │   │   │   ├── nz.ch03-008.wav
+│   │   │   │   │   ├── nz.ch03-008.wav.imeta
+│   │   │   │   │   ├── nz.ch03-009.wav
+│   │   │   │   │   ├── nz.ch03-009.wav.imeta
+│   │   │   │   │   ├── nz.ch03-010.wav
+│   │   │   │   │   ├── nz.ch03-010.wav.imeta
+│   │   │   │   │   ├── nz.ch03-011.wav
+│   │   │   │   │   ├── nz.ch03-011.wav.imeta
+│   │   │   │   │   ├── nz.ch03-013.wav
+│   │   │   │   │   ├── nz.ch03-013.wav.imeta
+│   │   │   │   │   ├── nz.ch03-014.wav
+│   │   │   │   │   ├── nz.ch03-014.wav.imeta
+│   │   │   │   │   ├── nz.ch03-015.wav
+│   │   │   │   │   ├── nz.ch03-015.wav.imeta
+│   │   │   │   │   ├── nz.ch03-016.wav
+│   │   │   │   │   ├── nz.ch03-016.wav.imeta
+│   │   │   │   │   ├── nz.ch03-017.wav
+│   │   │   │   │   ├── nz.ch03-017.wav.imeta
+│   │   │   │   │   ├── nz.ch03-018.wav
+│   │   │   │   │   ├── nz.ch03-018.wav.imeta
+│   │   │   │   │   ├── nz.ch03-019.wav
+│   │   │   │   │   ├── nz.ch03-019.wav.imeta
+│   │   │   │   │   ├── nz.ch03-021.wav
+│   │   │   │   │   ├── nz.ch03-021.wav.imeta
+│   │   │   │   │   ├── nz.ch03-022.wav
+│   │   │   │   │   ├── nz.ch03-022.wav.imeta
+│   │   │   │   │   ├── nz.ch03-023.wav
+│   │   │   │   │   ├── nz.ch03-023.wav.imeta
+│   │   │   │   │   ├── nz.ch03-024.wav
+│   │   │   │   │   ├── nz.ch03-024.wav.imeta
+│   │   │   │   │   ├── nz.ch03-025.wav
+│   │   │   │   │   ├── nz.ch03-025.wav.imeta
+│   │   │   │   │   ├── nz.ch03-026.wav
+│   │   │   │   │   ├── nz.ch03-026.wav.imeta
+│   │   │   │   │   ├── nz.ch03-029.wav
+│   │   │   │   │   ├── nz.ch03-029.wav.imeta
+│   │   │   │   │   ├── nz.ch03-030.wav
+│   │   │   │   │   ├── nz.ch03-030.wav.imeta
+│   │   │   │   │   ├── nz.ch03-032.wav
+│   │   │   │   │   ├── nz.ch03-032.wav.imeta
+│   │   │   │   │   ├── nz.ch03-033.wav
+│   │   │   │   │   ├── nz.ch03-033.wav.imeta
+│   │   │   │   │   ├── nz.ch03-034.wav
+│   │   │   │   │   ├── nz.ch03-034.wav.imeta
+│   │   │   │   │   ├── nz.ch03-035.wav
+│   │   │   │   │   ├── nz.ch03-035.wav.imeta
+│   │   │   │   │   ├── nz.ch03-036.wav
+│   │   │   │   │   ├── nz.ch03-036.wav.imeta
+│   │   │   │   │   ├── nz.ch03-038.wav
+│   │   │   │   │   ├── nz.ch03-038.wav.imeta
+│   │   │   │   │   ├── nz.ch03-039.wav
+│   │   │   │   │   ├── nz.ch03-039.wav.imeta
+│   │   │   │   │   ├── nz.ch03-040.wav
+│   │   │   │   │   ├── nz.ch03-040.wav.imeta
+│   │   │   │   │   ├── nz.ch03-042.wav
+│   │   │   │   │   ├── nz.ch03-042.wav.imeta
+│   │   │   │   │   ├── nz.ch03-043.wav
+│   │   │   │   │   ├── nz.ch03-043.wav.imeta
+│   │   │   │   │   ├── nz.ch03-044.wav
+│   │   │   │   │   ├── nz.ch03-044.wav.imeta
+│   │   │   │   │   ├── nz.ch03-045.wav
+│   │   │   │   │   ├── nz.ch03-045.wav.imeta
+│   │   │   │   │   ├── nz.ch03-046.wav
+│   │   │   │   │   ├── nz.ch03-046.wav.imeta
+│   │   │   │   │   ├── nz.ch03-047.wav
+│   │   │   │   │   ├── nz.ch03-047.wav.imeta
+│   │   │   │   │   ├── nz.ch03-049.wav
+│   │   │   │   │   ├── nz.ch03-049.wav.imeta
+│   │   │   │   │   ├── nz.ch03-050.wav
+│   │   │   │   │   ├── nz.ch03-050.wav.imeta
+│   │   │   │   │   ├── nz.ch03-053.wav
+│   │   │   │   │   ├── nz.ch03-053.wav.imeta
+│   │   │   │   │   ├── nz.ch03-054.wav
+│   │   │   │   │   ├── nz.ch03-054.wav.imeta
+│   │   │   │   │   ├── nz.ch03-055.wav
+│   │   │   │   │   ├── nz.ch03-055.wav.imeta
+│   │   │   │   │   ├── nz.ch03-056.wav
+│   │   │   │   │   ├── nz.ch03-056.wav.imeta
+│   │   │   │   │   ├── nz.ch03-058.wav
+│   │   │   │   │   ├── nz.ch03-058.wav.imeta
+│   │   │   │   │   ├── nz.ch03-059.wav
+│   │   │   │   │   ├── nz.ch03-059.wav.imeta
+│   │   │   │   │   ├── nz.ch03-061.wav
+│   │   │   │   │   ├── nz.ch03-061.wav.imeta
+│   │   │   │   │   ├── nz.ch03-062.wav
+│   │   │   │   │   └── nz.ch03-062.wav.imeta
+│   │   │   │   ├── nz.ch01.imeta
+│   │   │   │   ├── nz.ch02.imeta
+│   │   │   │   └── nz.ch03.imeta
+│   │   │   └── zh-CN.imeta
+│   │   ├── Ambience.imeta
+│   │   ├── Music.imeta
+│   │   ├── Sfx.imeta
+│   │   └── Voice.imeta
+│   ├── Authoring/
+│   │   ├── Catalog/
+│   │   │   ├── StoryLicenses.ivnlicenses
+│   │   │   ├── StoryLicenses.ivnlicenses.imeta
+│   │   │   ├── StoryResources.ivnlabels
+│   │   │   └── StoryResources.ivnlabels.imeta
+│   │   ├── Routes/
+│   │   │   ├── EndingCityLights.ivntest
+│   │   │   ├── EndingCityLights.ivntest.imeta
+│   │   │   ├── EndingMorningReunion.ivntest
+│   │   │   ├── EndingMorningReunion.ivntest.imeta
+│   │   │   ├── FinalBattleReplay.ivntest
+│   │   │   └── FinalBattleReplay.ivntest.imeta
+│   │   ├── Catalog.imeta
+│   │   └── Routes.imeta
+│   ├── Game/
+│   │   ├── Audio/
+│   │   │   ├── Cues/
+│   │   │   │   ├── Ambience/
+│   │   │   │   │   ├── MetroHum.ivnaudio
+│   │   │   │   │   ├── MetroHum.ivnaudio.imeta
+│   │   │   │   │   ├── Rain.ivnaudio
+│   │   │   │   │   ├── Rain.ivnaudio.imeta
+│   │   │   │   │   ├── RooftopWind.ivnaudio
+│   │   │   │   │   └── RooftopWind.ivnaudio.imeta
+│   │   │   │   ├── Music/
+│   │   │   │   │   ├── Cipher.ivnaudio
+│   │   │   │   │   ├── Cipher.ivnaudio.imeta
+│   │   │   │   │   ├── ClashDefiant.ivnaudio
+│   │   │   │   │   ├── ClashDefiant.ivnaudio.imeta
+│   │   │   │   │   ├── Dawn.ivnaudio
+│   │   │   │   │   ├── Dawn.ivnaudio.imeta
+│   │   │   │   │   ├── HeartOfNowhere.ivnaudio
+│   │   │   │   │   ├── HeartOfNowhere.ivnaudio.imeta
+│   │   │   │   │   ├── VolatileReaction.ivnaudio
+│   │   │   │   │   └── VolatileReaction.ivnaudio.imeta
+│   │   │   │   ├── Sfx/
+│   │   │   │   │   ├── CircuitConnect.ivnaudio
+│   │   │   │   │   ├── CircuitConnect.ivnaudio.imeta
+│   │   │   │   │   ├── ClockBell.ivnaudio
+│   │   │   │   │   ├── ClockBell.ivnaudio.imeta
+│   │   │   │   │   ├── DawnChime.ivnaudio
+│   │   │   │   │   ├── DawnChime.ivnaudio.imeta
+│   │   │   │   │   ├── Footsteps.ivnaudio
+│   │   │   │   │   ├── Footsteps.ivnaudio.imeta
+│   │   │   │   │   ├── GlassCrack.ivnaudio
+│   │   │   │   │   ├── GlassCrack.ivnaudio.imeta
+│   │   │   │   │   ├── Impact.ivnaudio
+│   │   │   │   │   ├── Impact.ivnaudio.imeta
+│   │   │   │   │   ├── LampIgnite.ivnaudio
+│   │   │   │   │   ├── LampIgnite.ivnaudio.imeta
+│   │   │   │   │   ├── PowerOut.ivnaudio
+│   │   │   │   │   ├── PowerOut.ivnaudio.imeta
+│   │   │   │   │   ├── SealBreak.ivnaudio
+│   │   │   │   │   ├── SealBreak.ivnaudio.imeta
+│   │   │   │   │   ├── Shield.ivnaudio
+│   │   │   │   │   ├── Shield.ivnaudio.imeta
+│   │   │   │   │   ├── SpellCharge.ivnaudio
+│   │   │   │   │   ├── SpellCharge.ivnaudio.imeta
+│   │   │   │   │   ├── SpellSlash.ivnaudio
+│   │   │   │   │   └── SpellSlash.ivnaudio.imeta
+│   │   │   │   ├── Voice/
+│   │   │   │   │   ├── nz.ch01/
+│   │   │   │   │   │   ├── nz.ch01-002.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-002.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-004.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-004.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-006.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-006.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-008.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-008.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-010.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-010.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-012.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-012.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-014.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-014.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-015.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-015.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-016.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-016.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-017.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-017.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-018.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-018.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-019.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-019.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-021.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-021.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-022.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-022.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-023.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-023.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-024.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-024.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-025.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-025.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-026.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-026.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-028.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-028.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-029.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-029.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-030.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-030.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-031.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-031.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-033.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-033.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-035.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-035.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-036.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-036.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-037.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-037.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-038.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-038.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-039.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-039.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-040.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-040.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-041.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-041.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-042.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-042.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-043.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-043.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-045.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-045.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-047.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-047.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-048.ivnaudio
+│   │   │   │   │   │   ├── nz.ch01-048.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch01-049.ivnaudio
+│   │   │   │   │   │   └── nz.ch01-049.ivnaudio.imeta
+│   │   │   │   │   ├── nz.ch02/
+│   │   │   │   │   │   ├── nz.ch02-002.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-002.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-003.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-003.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-004.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-004.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-005.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-005.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-007.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-007.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-008.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-008.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-009.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-009.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-010.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-010.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-012.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-012.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-013.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-013.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-014.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-014.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-015.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-015.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-016.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-016.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-017.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-017.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-018.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-018.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-020.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-020.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-021.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-021.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-022.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-022.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-024.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-024.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-026.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-026.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-027.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-027.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-028.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-028.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-029.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-029.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-031.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-031.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-032.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-032.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-033.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-033.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-035.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-035.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-037.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-037.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-038.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-038.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-039.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-039.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-040.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-040.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-041.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-041.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-042.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-042.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-043.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-043.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-045.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-045.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-046.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-046.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-047.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-047.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-049.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-049.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-050.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-050.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-051.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-051.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-053.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-053.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-054.ivnaudio
+│   │   │   │   │   │   ├── nz.ch02-054.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch02-055.ivnaudio
+│   │   │   │   │   │   └── nz.ch02-055.ivnaudio.imeta
+│   │   │   │   │   ├── nz.ch03/
+│   │   │   │   │   │   ├── nz.ch03-002.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-002.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-003.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-003.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-004.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-004.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-005.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-005.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-006.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-006.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-008.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-008.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-009.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-009.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-010.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-010.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-011.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-011.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-013.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-013.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-014.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-014.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-015.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-015.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-016.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-016.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-017.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-017.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-018.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-018.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-019.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-019.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-021.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-021.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-022.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-022.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-023.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-023.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-024.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-024.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-025.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-025.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-026.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-026.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-029.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-029.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-030.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-030.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-032.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-032.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-033.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-033.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-034.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-034.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-035.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-035.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-036.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-036.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-038.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-038.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-039.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-039.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-040.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-040.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-042.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-042.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-043.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-043.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-044.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-044.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-045.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-045.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-046.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-046.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-047.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-047.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-049.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-049.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-050.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-050.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-053.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-053.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-054.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-054.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-055.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-055.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-056.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-056.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-058.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-058.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-059.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-059.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-061.ivnaudio
+│   │   │   │   │   │   ├── nz.ch03-061.ivnaudio.imeta
+│   │   │   │   │   │   ├── nz.ch03-062.ivnaudio
+│   │   │   │   │   │   └── nz.ch03-062.ivnaudio.imeta
+│   │   │   │   │   ├── nz.ch01.imeta
+│   │   │   │   │   ├── nz.ch02.imeta
+│   │   │   │   │   └── nz.ch03.imeta
+│   │   │   │   ├── Ambience.imeta
+│   │   │   │   ├── Music.imeta
+│   │   │   │   ├── Sfx.imeta
+│   │   │   │   └── Voice.imeta
+│   │   │   └── Cues.imeta
+│   │   ├── Characters/
+│   │   │   ├── lin.ivncharacter
+│   │   │   ├── lin.ivncharacter.imeta
+│   │   │   ├── shen.ivncharacter
+│   │   │   ├── shen.ivncharacter.imeta
+│   │   │   ├── xu.ivncharacter
+│   │   │   └── xu.ivncharacter.imeta
+│   │   ├── Collections/
+│   │   │   ├── NeonZero.ivncollection
+│   │   │   └── NeonZero.ivncollection.imeta
+│   │   ├── Localization/
+│   │   │   ├── Chinese.ivnlocale
+│   │   │   └── Chinese.ivnlocale.imeta
+│   │   ├── Presentation/
+│   │   │   ├── Clips/
+│   │   │   │   ├── CameraPush.ivnclip
+│   │   │   │   ├── CameraPush.ivnclip.imeta
+│   │   │   │   ├── DawnReveal.ivnclip
+│   │   │   │   ├── DawnReveal.ivnclip.imeta
+│   │   │   │   ├── EnterLeft.ivnclip
+│   │   │   │   ├── EnterLeft.ivnclip.imeta
+│   │   │   │   ├── EnterRight.ivnclip
+│   │   │   │   ├── EnterRight.ivnclip.imeta
+│   │   │   │   ├── FinalCounter.ivnclip
+│   │   │   │   ├── FinalCounter.ivnclip.imeta
+│   │   │   │   ├── FinalDefense.ivnclip
+│   │   │   │   ├── FinalDefense.ivnclip.imeta
+│   │   │   │   ├── LampReveal.ivnclip
+│   │   │   │   ├── LampReveal.ivnclip.imeta
+│   │   │   │   ├── PlatformClash.ivnclip
+│   │   │   │   ├── PlatformClash.ivnclip.imeta
+│   │   │   │   ├── RainOpening.ivnclip
+│   │   │   │   ├── RainOpening.ivnclip.imeta
+│   │   │   │   ├── ResonancePractice.ivnclip
+│   │   │   │   ├── ResonancePractice.ivnclip.imeta
+│   │   │   │   ├── SealCollapse.ivnclip
+│   │   │   │   ├── SealCollapse.ivnclip.imeta
+│   │   │   │   ├── SpeakerEmphasis.ivnclip
+│   │   │   │   ├── SpeakerEmphasis.ivnclip.imeta
+│   │   │   │   ├── TowerBreak.ivnclip
+│   │   │   │   └── TowerBreak.ivnclip.imeta
+│   │   │   ├── Materials/
+│   │   │   │   ├── NovelComposition.imaterial
+│   │   │   │   ├── NovelComposition.imaterial.imeta
+│   │   │   │   ├── NovelSurface.imaterial
+│   │   │   │   └── NovelSurface.imaterial.imeta
+│   │   │   ├── Particles/
+│   │   │   │   ├── CircuitFlow.ivneffect
+│   │   │   │   ├── CircuitFlow.ivneffect.imeta
+│   │   │   │   ├── LampSparks.ivneffect
+│   │   │   │   ├── LampSparks.ivneffect.imeta
+│   │   │   │   ├── NightFragments.ivneffect
+│   │   │   │   ├── NightFragments.ivneffect.imeta
+│   │   │   │   ├── Rain.ivneffect
+│   │   │   │   └── Rain.ivneffect.imeta
+│   │   │   ├── Transitions/
+│   │   │   │   ├── Dissolve.ivneffect
+│   │   │   │   └── Dissolve.ivneffect.imeta
+│   │   │   ├── Clips.imeta
+│   │   │   ├── Materials.imeta
+│   │   │   ├── Particles.imeta
+│   │   │   └── Transitions.imeta
+│   │   ├── Scenes/
+│   │   │   ├── Main.iscene
+│   │   │   └── Main.iscene.imeta
+│   │   ├── Stages/
+│   │   │   ├── CityLights.ivnstage
+│   │   │   ├── CityLights.ivnstage.imeta
+│   │   │   ├── ClockTower.ivnstage
+│   │   │   ├── ClockTower.ivnstage.imeta
+│   │   │   ├── LampAlley.ivnstage
+│   │   │   ├── LampAlley.ivnstage.imeta
+│   │   │   ├── LampWorkshop.ivnstage
+│   │   │   ├── LampWorkshop.ivnstage.imeta
+│   │   │   ├── MetroPlatform.ivnstage
+│   │   │   ├── MetroPlatform.ivnstage.imeta
+│   │   │   ├── MorningReunion.ivnstage
+│   │   │   ├── MorningReunion.ivnstage.imeta
+│   │   │   ├── RainLamp.ivnstage
+│   │   │   ├── RainLamp.ivnstage.imeta
+│   │   │   ├── ResonantDawn.ivnstage
+│   │   │   ├── ResonantDawn.ivnstage.imeta
+│   │   │   ├── RooftopDawn.ivnstage
+│   │   │   ├── RooftopDawn.ivnstage.imeta
+│   │   │   ├── StreetDawn.ivnstage
+│   │   │   ├── StreetDawn.ivnstage.imeta
+│   │   │   ├── StreetRain.ivnstage
+│   │   │   ├── StreetRain.ivnstage.imeta
+│   │   │   ├── ZeroCore.ivnstage
+│   │   │   └── ZeroCore.ivnstage.imeta
+│   │   ├── Story/
+│   │   │   ├── Chapters/
+│   │   │   │   ├── Ch01_LastTrain.ivnstory
+│   │   │   │   ├── Ch01_LastTrain.ivnstory.imeta
+│   │   │   │   ├── Ch02_BrokenCircuit.ivnstory
+│   │   │   │   ├── Ch02_BrokenCircuit.ivnstory.imeta
+│   │   │   │   ├── Ch03_LastLight.ivnstory
+│   │   │   │   └── Ch03_LastLight.ivnstory.imeta
+│   │   │   ├── Chapters.imeta
+│   │   │   ├── Variables.ivnvariables
+│   │   │   └── Variables.ivnvariables.imeta
+│   │   ├── UI/
+│   │   │   ├── Components/
+│   │   │   │   ├── button.ivnui
+│   │   │   │   ├── button.ivnui.imeta
+│   │   │   │   ├── choices.ivnui
+│   │   │   │   ├── choices.ivnui.imeta
+│   │   │   │   ├── confirmation.ivnui
+│   │   │   │   ├── confirmation.ivnui.imeta
+│   │   │   │   ├── dialogue.ivnui
+│   │   │   │   ├── dialogue.ivnui.imeta
+│   │   │   │   ├── text-speed.ivnui
+│   │   │   │   ├── text-speed.ivnui.imeta
+│   │   │   │   ├── toolbar.ivnui
+│   │   │   │   └── toolbar.ivnui.imeta
+│   │   │   ├── Screens/
+│   │   │   │   ├── characters.ivnui
+│   │   │   │   ├── characters.ivnui.imeta
+│   │   │   │   ├── collectionDetail.ivnui
+│   │   │   │   ├── collectionDetail.ivnui.imeta
+│   │   │   │   ├── confirm.ivnui
+│   │   │   │   ├── confirm.ivnui.imeta
+│   │   │   │   ├── credits.ivnui
+│   │   │   │   ├── credits.ivnui.imeta
+│   │   │   │   ├── endings.ivnui
+│   │   │   │   ├── endings.ivnui.imeta
+│   │   │   │   ├── extras.ivnui
+│   │   │   │   ├── extras.ivnui.imeta
+│   │   │   │   ├── gallery.ivnui
+│   │   │   │   ├── gallery.ivnui.imeta
+│   │   │   │   ├── glossary.ivnui
+│   │   │   │   ├── glossary.ivnui.imeta
+│   │   │   │   ├── help.ivnui
+│   │   │   │   ├── help.ivnui.imeta
+│   │   │   │   ├── history.ivnui
+│   │   │   │   ├── history.ivnui.imeta
+│   │   │   │   ├── load.ivnui
+│   │   │   │   ├── load.ivnui.imeta
+│   │   │   │   ├── loading.ivnui
+│   │   │   │   ├── loading.ivnui.imeta
+│   │   │   │   ├── music.ivnui
+│   │   │   │   ├── music.ivnui.imeta
+│   │   │   │   ├── pause.ivnui
+│   │   │   │   ├── pause.ivnui.imeta
+│   │   │   │   ├── reading.ivnui
+│   │   │   │   ├── reading.ivnui.imeta
+│   │   │   │   ├── replays.ivnui
+│   │   │   │   ├── replays.ivnui.imeta
+│   │   │   │   ├── save.ivnui
+│   │   │   │   ├── save.ivnui.imeta
+│   │   │   │   ├── settings.ivnui
+│   │   │   │   ├── settings.ivnui.imeta
+│   │   │   │   ├── title.ivnui
+│   │   │   │   └── title.ivnui.imeta
+│   │   │   ├── Components.imeta
+│   │   │   ├── NeonNight.ivntheme
+│   │   │   ├── NeonNight.ivntheme.imeta
+│   │   │   └── Screens.imeta
+│   │   ├── Audio.imeta
+│   │   ├── Characters.imeta
+│   │   ├── Collections.imeta
+│   │   ├── Localization.imeta
+│   │   ├── NeonZero.ivnproject
+│   │   ├── NeonZero.ivnproject.imeta
+│   │   ├── Presentation.imeta
+│   │   ├── Scenes.imeta
+│   │   ├── Stages.imeta
+│   │   ├── Story.imeta
+│   │   └── UI.imeta
+│   ├── Art.imeta
+│   ├── Audio.imeta
+│   ├── Authoring.imeta
+│   └── Game.imeta
+├── Documentation/
+│   ├── Acceptance.md
+│   ├── Architecture.md
+│   ├── AssetCredits.md
+│   ├── AuthoringGuide.md
+│   ├── Controls.md
+│   ├── Delivery.md
+│   ├── FileTree.txt
+│   ├── ImplementationPlan.md
+│   └── KnownLimitations.md
+├── Licenses/
+│   ├── FontNotices.txt
+│   ├── GeneratedAssets.txt
+│   ├── MusicAttribution.txt
+│   └── PluginNotices.txt
+├── Plugins/
+│   └── InnoEngine.VisualNovel.iplugin
+├── Production/
+│   ├── Art/
+│   │   ├── ArtDirection.md
+│   │   └── GenerationPrompts.md
+│   ├── Audio/
+│   │   ├── MixNotes.md
+│   │   ├── Pronunciation.md
+│   │   └── VoiceCasting.md
+│   └── Story/
+│       ├── BranchMap.md
+│       ├── Reading.zh-CN.txt
+│       ├── SceneBeats.md
+│       └── Synopsis.md
+├── Tools/
+│   ├── Authoring/
+│   │   ├── ChapterBuilder.cs
+│   │   ├── NativeProject.cs
+│   │   ├── Program.cs
+│   │   ├── RouteAudioOutput.cs
+│   │   ├── Story.Authoring.csproj
+│   │   └── StorySeed.cs
+│   ├── EditorHost/
+│   │   ├── Program.cs
+│   │   └── Story.EditorHost.csproj
+│   ├── Bake-Voice.ps1
+│   ├── Import-Plugin.ps1
+│   ├── Open-Story.ps1
+│   └── Prepare-Audio.ps1
+├── .gitignore
+├── README.md
+└── Settings.Project.inno

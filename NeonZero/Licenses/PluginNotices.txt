@@ -1,0 +1,4 @@
+InnoEngine.VisualNovel source plugin is installed through Plugins/InnoEngine.VisualNovel.iplugin.
+The engine itself is not included or modified by this sample.
+Built-in font, shader, particle sprite, widget and Dawn references retain their plugin ownership.
+See the plugin's Assets/Documentation/LICENSE.txt and related resource notices.

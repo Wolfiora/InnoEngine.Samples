@@ -1,0 +1,15 @@
+"Cipher", "Heart of Nowhere", "Clash Defiant", "Volatile Reaction"
+Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/
+
+Official track records:
+https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1100844
+https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1400045
+https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1600003
+https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1400039
+
+MP3 originals downloaded from the official incompetech.com distribution.
+No audio edits or re-encoding were applied.
+
+"Dawn": InnoEngine.VisualNovel built-in original audio resource.

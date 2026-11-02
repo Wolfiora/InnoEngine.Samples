@@ -1,0 +1,5 @@
+本案例背景、角色、头像、CG 和封面使用内置 imagegen 为原创虚构故事生成。
+角色语音由 Windows Media SpeechSynthesis 与本机安装的中文声线离线合成。
+项目只分发生成后的图片和录音，不包含图像生成模型或 Windows 声线模型。
+三段环境循环及十二个剧情音效由本案例离线工具合成。
+具体来源与制作说明见 Documentation/AssetCredits.md。
