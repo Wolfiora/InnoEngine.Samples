@@ -258,7 +258,7 @@ internal sealed class NativeProject(
                 root = template.root, textFonts = template.textFonts, textIcons = template.textIcons });
         }
         var licenses = new List<ResourceLicenseEntry>();
-        foreach (var entry in assets.GetFileSystemEntries(includeDirectories: false).Where(item => item.source == AssetSourceId.project && item.assetPath.localPath.StartsWith("Art/", StringComparison.Ordinal)))
+        foreach (var entry in assets.GetFileSystemEntries(includeDirectories: false).Where(item => item.source == AssetSourceID.project && item.assetPath.localPath.StartsWith("Art/", StringComparison.Ordinal)))
             if (entry.assetPath.localPath.EndsWith(".png", StringComparison.Ordinal)) licenses.Add(new() { asset = Inno.Assets.Assets.Load<TextureAsset>(entry.assetPath), author = "Story Demo · AI generated",
                 source = "imagegen built-in; original fictional characters; prompts documented in Production/Art/GenerationPrompts.md", license = "Generated for this demo", redistributionConfirmed = true });
         foreach (var cue in game.audio.Where(item => item.channel == NovelAudioChannel.Bgm && item.resourceId != "nz.music.dawn"))
@@ -274,21 +274,21 @@ internal sealed class NativeProject(
             var source = EditorAssets.DecodeNative<StoryAsset>(File.ReadAllBytes(Path.Combine(root, "Assets", local)));
             foreach (var node in source.graph.document.nodes.ToArray())
             {
-                if (node.definitionId == StoryNodeIds.stage && codec.Read<StageNode>(node) is { operation: StageOperation.SetStage } scenery)
+                if (node.definitionID == StoryNodeIds.stage && codec.Read<StageNode>(node) is { operation: StageOperation.SetStage } scenery)
                 {
-                    var edges = source.graph.document.edges.Where(edge => edge.output.nodeId == node.id || edge.input.nodeId == node.id).ToArray();
+                    var edges = source.graph.document.edges.Where(edge => edge.output.nodeID == node.id || edge.input.nodeID == node.id).ToArray();
                     source.graph.document.RemoveNode(node.id);
                     var replacement = new GraphNodeRecord(node.id, StoryNodeIds.transition) { position = node.position };
                     codec.Write(replacement, new TransitionNode { operation = TransitionOperation.Begin, nextStage = scenery.resourceId,
                         resourceId = transition.resourceId, waitForCompletion = true });
                     source.graph.document.AddNode(replacement); foreach (var edge in edges) source.graph.document.AddEdge(edge);
                 }
-                if (node.definitionId == StoryNodeIds.end) InsertSystem(source, node, new() { operation = SystemOperation.OpenPage, argument = "credits" }, "credits-");
-                if (node.definitionId == StoryNodeIds.call) InsertSystem(source, node, new() { operation = SystemOperation.AutoSave, argument = "" }, "autosave-");
+                if (node.definitionID == StoryNodeIds.end) InsertSystem(source, node, new() { operation = SystemOperation.OpenPage, argument = "credits" }, "credits-");
+                if (node.definitionID == StoryNodeIds.call) InsertSystem(source, node, new() { operation = SystemOperation.AutoSave, argument = "" }, "autosave-");
             }
             if (i == 1 && !source.entries.Any(entry => entry.id == "tower"))
             {
-                var target = source.graph.document.nodes.First(node => node.definitionId == StoryNodeIds.transition && codec.Read<TransitionNode>(node).nextStage == "nz.stage.ClockTower");
+                var target = source.graph.document.nodes.First(node => node.definitionID == StoryNodeIds.transition && codec.Read<TransitionNode>(node).nextStage == "nz.stage.ClockTower");
                 var entry = new GraphNodeRecord(new("entry-tower"), StoryNodeIds.entry) { position = new(target.position.x - 340, target.position.y - 170) };
                 source.graph.document.AddNode(entry); source.graph.document.AddEdge(new(new(Guid.NewGuid().ToString("N")), new(entry.id, new("next")), new(target.id, new("in"))));
                 source.entries = [.. source.entries, new() { id = "tower", nodeId = entry.id.value }]; source.fragments[0].nodes = [.. source.fragments[0].nodes, entry.id.value];
@@ -298,7 +298,7 @@ internal sealed class NativeProject(
             {
                 foreach (var ending in new[] { ("CityLights", "结局一", new[] { "a", "a", "a" }), ("MorningReunion", "结局二", new[] { "b", "b", "b" }) })
                 {
-                    var target = source.graph.document.nodes.First(node => node.definitionId == StoryNodeIds.dialogue && codec.Read<DialogueNode>(node).text.StartsWith(ending.Item2, StringComparison.Ordinal));
+                    var target = source.graph.document.nodes.First(node => node.definitionID == StoryNodeIds.dialogue && codec.Read<DialogueNode>(node).text.StartsWith(ending.Item2, StringComparison.Ordinal));
                     Save("Authoring/Routes/Ending" + ending.Item1 + ".ivntest", new NovelPreviewCaseAsset { title = ending.Item2, mode = PreviewRunMode.Route,
                         chapterId = "nz.ch01", nodeId = target.id.value, choices = ending.Item3, maximumSeconds = 1800 });
                 }
@@ -318,9 +318,9 @@ internal sealed class NativeProject(
         SystemNode action,
         string prefix
     ) {
-        var id = new GraphNodeId(prefix + target.id.value);
+        var id = new GraphNodeID(prefix + target.id.value);
         if (source.graph.document.FindNode(id) is not null) return;
-        var incoming = source.graph.document.edges.Where(edge => edge.input.nodeId == target.id).ToArray();
+        var incoming = source.graph.document.edges.Where(edge => edge.input.nodeID == target.id).ToArray();
         var node = new GraphNodeRecord(id, StoryNodeIds.system) { position = new(target.position.x - 160, target.position.y + 100) };
         codec.Write(node, action); source.graph.document.AddNode(node);
         foreach (var edge in incoming)
@@ -355,21 +355,21 @@ internal sealed class NativeProject(
         foreach (var chapter in game.chapters)
         {
             var source = EditorAssets.DecodeNative<StoryAsset>(File.ReadAllBytes(Path.Combine(root, "Assets", chapter.assetPath.localPath)));
-            foreach (var node in source.graph.document.nodes.Where(node => node.definitionId == StoryNodeIds.stage))
+            foreach (var node in source.graph.document.nodes.Where(node => node.definitionID == StoryNodeIds.stage))
             {
                 var actor = codec.Read<StageNode>(node);
                 if (actor.operation != StageOperation.ShowCharacter) continue;
-                var pending = new Queue<GraphNodeId>(); var visited = new HashSet<GraphNodeId>(); var scenery = new HashSet<string>();
+                var pending = new Queue<GraphNodeID>(); var visited = new HashSet<GraphNodeID>(); var scenery = new HashSet<string>();
                 pending.Enqueue(node.id);
-                while (pending.TryDequeue(out GraphNodeId cursor))
+                while (pending.TryDequeue(out GraphNodeID cursor))
                 {
                     if (!visited.Add(cursor)) continue;
                     var current = source.graph.document.FindNode(cursor)!;
-                    if (current.definitionId == StoryNodeIds.transition)
+                    if (current.definitionID == StoryNodeIds.transition)
                     {
                         scenery.Add(codec.Read<TransitionNode>(current).nextStage); continue;
                     }
-                    foreach (var edge in source.graph.document.edges.Where(edge => edge.input.nodeId == cursor)) pending.Enqueue(edge.output.nodeId);
+                    foreach (var edge in source.graph.document.edges.Where(edge => edge.input.nodeID == cursor)) pending.Enqueue(edge.output.nodeID);
                 }
                 if (scenery.Count != 1) continue;
                 actor.pose = scenery.Single() is "nz.stage.MetroPlatform" or "nz.stage.ClockTower" or "nz.stage.ZeroCore" ? "battle" : "idle";
@@ -380,7 +380,7 @@ internal sealed class NativeProject(
         }
         var catalog = Load<ResourceLabelCatalogAsset>("Authoring/Catalog/StoryResources.ivnlabels");
         var labels = catalog.entries.ToList();
-        foreach (var entry in assets.GetFileSystemEntries(includeDirectories: false).Where(item => item.source == AssetSourceId.project))
+        foreach (var entry in assets.GetFileSystemEntries(includeDirectories: false).Where(item => item.source == AssetSourceID.project))
         {
             string path = entry.assetPath.localPath;
             AssetObject? media = path.EndsWith(".png", StringComparison.Ordinal) ? Load<TextureAsset>(path)
@@ -406,7 +406,7 @@ internal sealed class NativeProject(
         {
             var path = AssetPath.Project("Game/Story/Chapters/" + m_chapters[i] + ".ivnstory");
             var source = EditorAssets.DecodeNative<StoryAsset>(File.ReadAllBytes(Path.Combine(root, "Assets", path.localPath)));
-            foreach (var node in source.graph.document.nodes.Where(node => node.definitionId == StoryNodeIds.dialogue))
+            foreach (var node in source.graph.document.nodes.Where(node => node.definitionID == StoryNodeIds.dialogue))
             {
                 var line = codec.Read<DialogueNode>(node);
                 if (line.characterId.Length == 0) continue;
@@ -449,7 +449,7 @@ internal sealed class NativeProject(
         {
             var source = EditorAssets.DecodeNative<StoryAsset>(File.ReadAllBytes(Path.Combine(root, "Assets", "Game", "Story", "Chapters", chapter + ".ivnstory")));
             reading.Add(source.title);
-            foreach (var line in source.graph.document.nodes.Where(node => node.definitionId == StoryNodeIds.dialogue).Select(node => codec.Read<DialogueNode>(node)).OrderBy(line => line.textId, StringComparer.Ordinal))
+            foreach (var line in source.graph.document.nodes.Where(node => node.definitionID == StoryNodeIds.dialogue).Select(node => codec.Read<DialogueNode>(node)).OrderBy(line => line.textId, StringComparer.Ordinal))
                 reading.Add(line.textId + " | " + (line.characterId.Length == 0 ? "旁白" : game.characters.Single(actor => actor.resourceId == line.characterId).displayName) + "：" + line.text);
             reading.Add("");
         }
@@ -458,7 +458,7 @@ internal sealed class NativeProject(
 
     private T BuiltIn<T>(string local) where T : AssetObject
     {
-        var entry = assets.GetFileSystemEntries(includeDirectories: false).First(item => item.source != AssetSourceId.project && item.assetPath.localPath == local);
+        var entry = assets.GetFileSystemEntries(includeDirectories: false).First(item => item.source != AssetSourceID.project && item.assetPath.localPath == local);
         if (!assets.Import(entry.assetPath)) throw new InvalidOperationException("Plugin asset did not import: " + entry.assetPath);
         return Inno.Assets.Assets.Load<T>(entry.assetPath);
     }
@@ -509,7 +509,7 @@ internal sealed class NativeProject(
             if (!pipeline.TryGetInfo(persistentId, out var info) || info is null
                 || !pipeline.TryLoad<AssetObject>(info.assetPath, out var value) || value is null
                 || value.isMissing || !value.assetPath.isValid || !expectedType.IsInstanceOfType(value)
-                || value.identity.persistentId != persistentId || catalog.GetTypeRef(value.GetType()).stableId != stableTypeId)
+                || value.identity.persistentID != persistentId || catalog.GetTypeRef(value.GetType()).stableID != stableTypeId)
                 throw new InvalidOperationException("The current source reference is unavailable: " + propertyPath + " -> " + persistentId);
             return value;
         }

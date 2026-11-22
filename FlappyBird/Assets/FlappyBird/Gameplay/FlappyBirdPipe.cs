@@ -8,7 +8,7 @@ using InnoEngine.Serialization;
 namespace FlappyBird;
 
 /// <summary>Controls one prefab instance containing an upper and lower pipe.</summary>
-[StableTypeId("d3140c98-f0e1-4820-b750-51fb6f1c2c3e")]
+[StableTypeID("d3140c98-f0e1-4820-b750-51fb6f1c2c3e")]
 public sealed class FlappyBirdPipe : GameBehavior
 {
     private const float C_HALF_GAP = 1.32f;

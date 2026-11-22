@@ -17,7 +17,7 @@ using InnoEngine.UI;
 namespace FlappyBird;
 
 /// <summary>Runs the game from the scene's Canvas, bird, and pipe prefab.</summary>
-[StableTypeId("000cb832-8caf-4b9d-a397-97f95e0fd7ac")]
+[StableTypeID("000cb832-8caf-4b9d-a397-97f95e0fd7ac")]
 public sealed class FlappyBirdController : GameBehavior
 {
     private static readonly StorageKey S_BEST_SCORE_KEY = new("flappy-bird/best-score.txt");
@@ -347,20 +347,20 @@ public sealed class FlappyBirdController : GameBehavior
         m_hudDirty = true;
     }
 
-    private void OnCanvasEvent(UiEvent uiEvent)
+    private void OnCanvasEvent(UIEvent uiEvent)
     {
-        if (uiEvent.type != UiEventType.Click)
+        if (uiEvent.type != UIEventType.Click)
             return;
-        if (uiEvent.targetId == "mode-button"
-            || uiEvent.targetId.StartsWith("moon-", StringComparison.Ordinal)
-            || uiEvent.targetId.StartsWith("sun-", StringComparison.Ordinal))
+        if (uiEvent.targetID == "mode-button"
+            || uiEvent.targetID.StartsWith("moon-", StringComparison.Ordinal)
+            || uiEvent.targetID.StartsWith("sun-", StringComparison.Ordinal))
         {
             m_suppressPointerFlap = true;
             SetNightMode(!m_night);
             return;
         }
-        if ((uiEvent.targetId is "start-button" or "start-label") && m_phase == Phase.Ready
-            || (uiEvent.targetId is "restart-button" or "restart-label") && m_phase == Phase.Dead)
+        if ((uiEvent.targetID is "start-button" or "start-label") && m_phase == Phase.Ready
+            || (uiEvent.targetID is "restart-button" or "restart-label") && m_phase == Phase.Dead)
         {
             m_suppressPointerFlap = true;
             StartRun();

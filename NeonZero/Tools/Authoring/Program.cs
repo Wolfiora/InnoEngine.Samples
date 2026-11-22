@@ -47,8 +47,8 @@ internal static class Program
             if (args[1] == "settings")
             {
                 using var settings = new ProjectSettingsStore(new FileByteDocumentStore(Path.Combine(root, "Settings.Project.inno")), types, serialization,
-                    new ProjectId("inno.project"), SerializationContext.empty);
-                settings.SetProjectOverride(ProjectIdentitySettings.settingId,
+                    new ProjectID("inno.project"), SerializationContext.empty);
+                settings.SetProjectOverride(ProjectIdentitySettings.settingID,
                     new ProjectIdentitySettings { projectId = "inno.samples.neonzero" }, []);
                 Console.WriteLine("Native project namespace: inno.samples.neonzero");
                 return 0;
@@ -69,8 +69,8 @@ internal static class Program
                     File.ReadAllBytes(Path.Combine(root, "Assets", "Game", "NeonZero.ivnproject")));
                 foreach (var dependency in assets.CaptureProperties(raw).dependencies)
                 {
-                    string path = assets.TryGetInfo(dependency.persistentId, out var info) ? info!.assetPath.ToString() : "<uncataloged>";
-                    Console.WriteLine(dependency.persistentId + " | " + dependency.lastKnownPath + " | " + path);
+                    string path = assets.TryGetInfo(dependency.persistentID, out var info) ? info!.assetPath.ToString() : "<uncataloged>";
+                    Console.WriteLine(dependency.persistentID + " | " + dependency.lastKnownPath + " | " + path);
                 }
                 return 0;
             }
@@ -79,7 +79,7 @@ internal static class Program
                 Prepare(entry.assetPath);
             if (args[1] != "seed" && args[1] != "manuscript")
                 foreach (var entry in assets.GetFileSystemEntries(includeDirectories: false)
-                    .Where(entry => entry.source == AssetSourceId.project && entry.assetPath.localPath.StartsWith("Game/", StringComparison.Ordinal)
+                    .Where(entry => entry.source == AssetSourceID.project && entry.assetPath.localPath.StartsWith("Game/", StringComparison.Ordinal)
                         && !entry.assetPath.localPath.StartsWith("Game/Scenes/", StringComparison.Ordinal)
                         && entry.assetPath.localPath != "Game/NeonZero.ivnproject")
                     .OrderBy(entry => entry.assetPath.localPath.Contains("/Story/Chapters/", StringComparison.Ordinal) ? 1 : 0))

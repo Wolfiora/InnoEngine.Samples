@@ -9,7 +9,7 @@ using InnoEngine.Serialization;
 namespace FlappyBird;
 
 /// <summary>Animates the serialized bird sprites and follows its scene light.</summary>
-[StableTypeId("ebd5a563-5fd2-421c-99b9-517fa1ee3781")]
+[StableTypeID("ebd5a563-5fd2-421c-99b9-517fa1ee3781")]
 public sealed class FlappyBirdBird : GameBehavior
 {
     private float m_animationClock;
